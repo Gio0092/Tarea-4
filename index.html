@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Calculator</title>
+	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+	<link rel="stylesheet" href="css/estilos.css">
+	</style>
+</head>
+<body>
+	<!-- Main container -->
+	<div class="main">
+		<form class="form">
+				<header class="head">
+					<div class="title">Giovanni´s Restaurant</div>					
+				</header>
+			<!-- Data -->
+			<label  class="label">Amount</label>
+			<input type="number"	id="amount" class="input" 	placeholder="Enter your amount" autofocus >
+
+			<label class="label">Tip</label>
+			<input type="number" id="number" autofocus> <span>%</span>
+
+			<label class="label">Guests</label>
+			<input type="number" id="persons" class="input" placeholder="Quantity of guests" autofocus>
+
+			<input type="button" value="Calculate" id="btn" onclick="calculate();">
+				<!-- Result -->
+			<div class="show">
+					<h1 id="h1"></h1>
+					<h3 id="h3"></h3>
+					<h1 id="h1-2"></h1>
+					<h3 id="h3-2"></h3>
+			</div>
+		</form>
+		<!--Javascript-->
+	<script>
+		function calculate(){
+
+			var val1 = parseInt(document.getElementById('amount').value);
+			var val2 = parseInt(document.getElementById('number').value);
+			var val3 = parseInt(document.getElementById('persons').value);
+			var result1 = val1 + (val1 / 100 * val2);
+			var result2 = result1 / val3;
+			//alert(result1)
+			document.getElementById('h1').innerHTML='Your total is:';
+			document.getElementById('h3').innerHTML= '$' + result1;
+			//alert(result2)
+			document.getElementById('h1-2').innerHTML= 'Your total per person:';
+			document.getElementById('h3-2').innerHTML='$' + result2
+		}
+
+	</script>
+		
+		
+	</div>
+</body>
+</html>
